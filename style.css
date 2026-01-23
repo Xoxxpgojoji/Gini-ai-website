@@ -1,114 +1,171 @@
+/* =========================
+   RESET + BASE
+========================= */
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
 }
 
-body{
-  background:radial-gradient(circle at top, #111827, #020617);
-  color:#ffffff;
+html,body{
+  width:100%;
+  height:100%;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background:#000;
+  color:#fff;
+  scroll-behavior:smooth;
   overflow-x:hidden;
 }
 
-/* HERO */
+/* =========================
+   HERO SECTION
+========================= */
 .hero{
-  height:100vh;
+  min-height:100vh;
+  width:100%;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
+
+  background:
+    radial-gradient(circle at top, #141414 0%, #050505 60%, #000 100%);
 }
 
+/* =========================
+   MAIN TITLE
+========================= */
 .hero h1{
-  font-size:clamp(56px, 10vw, 96px);
-  letter-spacing:6px;
-  background:linear-gradient(90deg,#ffffff,#9ca3af);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  font-size:clamp(42px, 9vw, 68px);
+  font-weight:600;
+  letter-spacing:4px;
+
+  color:#ffffff;
+
+  text-shadow:
+    0 0 20px rgba(255,255,255,0.25),
+    0 0 60px rgba(255,159,28,0.15);
 }
 
-.hero p{
-  margin-top:12px;
-  font-size:18px;
-  opacity:0.8;
-}
+/* =========================
+   GLOWING QUOTE BOX
+========================= */
+.quote{
+  margin:26px auto 14px;
+  padding:14px 34px;
 
-.scroll{
-  margin-top:50px;
+  width:fit-content;
+  border-radius:18px;
+
   font-size:14px;
-  opacity:0.6;
-  animation:bounce 1.6s infinite;
+  letter-spacing:1.4px;
+  font-weight:500;
+
+  color:#ff9f1c;
+
+  background:rgba(0,0,0,0.88);
+  backdrop-filter:blur(22px);
+
+  border:1px solid rgba(255,159,28,0.55);
+
+  box-shadow:
+    0 0 25px rgba(255,159,28,0.45),
+    0 0 60px rgba(255,159,28,0.25),
+    inset 0 0 30px rgba(0,0,0,0.95);
+
+  animation: glowPulse 3.5s ease-in-out infinite;
 }
 
-/* SECTIONS */
-.section{
-  height:100vh;
+/* =========================
+   TAGLINE
+========================= */
+.hero p{
+  margin-top:10px;
+  font-size:15px;
+  letter-spacing:1.2px;
+  opacity:0.85;
+}
+
+/* =========================
+   SCROLL INDICATOR
+========================= */
+.scroll{
+  margin-top:40px;
+  font-size:13px;
+  letter-spacing:2px;
+  opacity:0.6;
+  animation: bounce 1.8s infinite;
+}
+
+/* =========================
+   SECTIONS (SCROLL REVEAL)
+========================= */
+section{
+  min-height:100vh;
+  width:100%;
   display:flex;
+  flex-direction:column;
   justify-content:center;
   align-items:center;
-  padding:20px;
+  text-align:center;
 
   opacity:0;
-  transform:translateY(80px);
+  transform:translateY(60px);
   transition:1s ease;
 }
 
-.section.show{
+section.show{
   opacity:1;
   transform:translateY(0);
 }
 
-/* GLASS CARD */
-.glass{
-  max-width:700px;
-  padding:60px 50px;
-  text-align:center;
-
-  background:rgba(255,255,255,0.06);
-  backdrop-filter:blur(20px);
-  border-radius:24px;
-  border:1px solid rgba(255,255,255,0.15);
-
-  box-shadow:
-    0 0 40px rgba(255,255,255,0.08),
-    inset 0 0 30px rgba(255,255,255,0.05);
+section h2{
+  font-size:28px;
+  letter-spacing:2px;
+  margin-bottom:12px;
 }
 
-.glass h2{
-  font-size:42px;
-  margin-bottom:15px;
+section p{
+  max-width:600px;
+  font-size:15px;
+  line-height:1.7;
+  opacity:0.75;
 }
 
-.glass p{
-  font-size:18px;
-  line-height:1.6;
-  opacity:0.8;
-}
-
-/* QUOTE BLACK ORANGE GLOW */
-.quote{
-  margin-top:22px;
-  padding:12px 28px;
-  border-radius:16px;
-
-  font-size:14px;
-  letter-spacing:1px;
-  color:#ff9f1c;
-
-  background:rgba(0,0,0,0.65);
-  backdrop-filter:blur(18px);
-
-  border:1px solid rgba(255,159,28,0.4);
-
-  box-shadow:
-    0 0 18px rgba(255,159,28,0.35),
-    0 0 40px rgba(255,159,28,0.15),
-    inset 0 0 25px rgba(0,0,0,0.8);
-}
-/* ANIMATION */
+/* =========================
+   ANIMATIONS
+========================= */
 @keyframes bounce{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(10px);}
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(8px); }
+}
+
+@keyframes glowPulse{
+  0%,100%{
+    box-shadow:
+      0 0 18px rgba(255,159,28,0.35),
+      0 0 45px rgba(255,159,28,0.2),
+      inset 0 0 30px rgba(0,0,0,0.95);
+  }
+  50%{
+    box-shadow:
+      0 0 28px rgba(255,159,28,0.6),
+      0 0 80px rgba(255,159,28,0.35),
+      inset 0 0 30px rgba(0,0,0,0.95);
+  }
+}
+
+/* =========================
+   MOBILE POLISH
+========================= */
+@media (max-width:600px){
+  .quote{
+    font-size:13px;
+    padding:12px 26px;
+  }
+
+  section h2{
+    font-size:24px;
+  }
 }
