@@ -1,10 +1,16 @@
 .reveal {
-  opacity: 0;
-  transform: translateY(80px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  opacity: 1;
+  transform: none;
 }
 
-.reveal.active {
+/* future animation ke liye */
+.reveal.animate {
+  opacity: 0;
+  transform: translateY(80px);
+}
+
+.reveal.animate.active {
   opacity: 1;
   transform: translateY(0);
-}/* animations */
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
