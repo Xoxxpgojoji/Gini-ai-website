@@ -4,50 +4,103 @@
   <meta charset="UTF-8">
   <title>Gini AI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- ================= BASE STYLES ================= -->
+  <link rel="stylesheet" href="css/base.css">
+
+  <!-- ================= GLOBAL ANIMATIONS ================= -->
+  <link rel="stylesheet" href="css/animations.css">
+
+  <!-- ================= MODEL 1 STYLES ================= -->
+  <link rel="stylesheet" href="css/model1.css">
 </head>
+
 <body>
 
-  <!-- TOP HEADER -->
-  <header class="topbar">
-    <div class="logo">Gini AI</div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero reveal">
-    <h1>Gini AI</h1>
-    <p>Not an assistant. A presence.</p>
+  <!-- =====================================================
+       HERO / HOME SECTION
+       (Future: intro animation, bg video, particles)
+  ====================================================== -->
+  <section id="home" class="hero-section">
+    <div class="hero-inner reveal">
+      <h1 class="hero-title">Gini AI</h1>
+      <p class="hero-tagline">Designing Intelligence for the Future</p>
+    </div>
   </section>
 
-  <!-- SECTIONS -->
-  <section class="content reveal">
-    <h2>Presence</h2>
-    <p>
-      A calm intelligence designed to exist, observe, and evolve —
-      without demanding attention.
-    </p>
+
+  <!-- =====================================================
+       SCROLL SPACE / TRANSITION ZONE
+       (Future: parallax / blur fade)
+  ====================================================== -->
+  <section class="spacer"></section>
+
+
+  <!-- =====================================================
+       GINI – MODEL 1 SECTION
+       (Main showcase section)
+  ====================================================== -->
+  <section id="model-1" class="model-section reveal">
+
+    <!-- ---------- MODEL HEADER ---------- -->
+    <header class="model-header">
+      <h2 class="model-title">Gini – Model 1</h2>
+      <p class="model-subtitle">Calm · Trustworthy · Premium</p>
+    </header>
+
+    <!-- ---------- MODEL SHOWCASE ---------- -->
+    <div class="model-showcase">
+
+      <!-- SLIDER WRAPPER -->
+      <div class="slider" data-slider="model1">
+
+        <!-- SLIDES CONTAINER -->
+        <div class="slides">
+          <img src="assets/gini-model1/img1.png" alt="Gini Model 1 Image 1">
+          <img src="assets/gini-model1/img2.png" alt="Gini Model 1 Image 2">
+          <img src="assets/gini-model1/img3.png" alt="Gini Model 1 Image 3">
+          <img src="assets/gini-model1/img4.png" alt="Gini Model 1 Image 4">
+        </div>
+
+        <!-- SLIDER CONTROLS -->
+        <button class="nav prev" data-action="prev">&#10094;</button>
+        <button class="nav next" data-action="next">&#10095;</button>
+
+        <!-- SLIDER INDICATORS (future dots / progress bar) -->
+        <div class="slider-indicators"></div>
+
+      </div>
+    </div>
+
   </section>
 
-  <section class="content reveal">
-    <h2>Vision</h2>
-    <p>
-      Technology that feels less like a tool and more like a silent layer
-      of understanding.
-    </p>
+
+  <!-- =====================================================
+       FUTURE MODELS PLACEHOLDER
+       (Model 2, Model 3 later)
+  ====================================================== -->
+  <section id="future-models" class="future-section">
+    <!-- Empty on purpose -->
   </section>
 
-  <section class="content reveal">
-    <h2>Future</h2>
-    <p>
-      Built slowly, intentionally, and with purpose.
-    </p>
-  </section>
 
-  <!-- FOOTER -->
+  <!-- =====================================================
+       FOOTER / BRAND SPACE
+       (Minimal, premium)
+  ====================================================== -->
   <footer class="footer">
-    <span>Made by Anmol Srivastav</span>
+    <p>© Gini AI — Future in Progress</p>
   </footer>
 
-  <script src="script.js"></script>
+
+  <!-- ================= CORE JS ================= -->
+  <script src="js/main.js"></script>
+
+  <!-- ================= SCROLL ANIMATIONS ================= -->
+  <script src="js/scrollReveal.js"></script>
+
+  <!-- ================= SLIDER LOGIC ================= -->
+  <script src="js/slider.js"></script>
+
 </body>
 </html>
