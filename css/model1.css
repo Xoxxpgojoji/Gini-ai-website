@@ -1,1 +1,62 @@
 /* Gini Model 1 styles */
+.model-section {
+  padding: 120px 0;
+  text-align: center;
+}
+
+.model-title {
+  font-size: 42px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.model-subtitle {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.model-showcase {
+  margin-top: 60px;
+}
+
+.slider {
+  position: relative;
+  width: 320px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.9s ease;
+}
+
+.slides img {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.nav:hover {
+  opacity: 1;
+}
+
+.prev {
+  left: -50px;
+}
+
+.next {
+  right: -50px;
+}
