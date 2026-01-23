@@ -1,5 +1,39 @@
-/* TEMPORARY: animations off */
+/* =========================
+   REVEAL ANIMATION (SAFE)
+========================= */
 .reveal {
-  opacity: 1 !important;
-  transform: none !important;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Jab JS active kare */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   HERO INTRO ANIMATION
+========================= */
+.hero-content {
+  animation: heroIntro 1.2s ease forwards;
+}
+
+@keyframes heroIntro {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   SMOOTH SCROLL FEEL
+========================= */
+html {
+  scroll-behavior: smooth;
 }
