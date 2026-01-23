@@ -1,19 +1,43 @@
+/* RESET */
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: "Inter", sans-serif;
 }
 
 body{
-  background: radial-gradient(circle at top, #0d0d0d, #000);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+               "Inter", system-ui, sans-serif;
+  background:#000;
   color:#fff;
-  overflow-x:hidden;
+  line-height:1.6;
+}
+
+/* HEADER */
+.topbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:56px;
+  display:flex;
+  align-items:center;
+  padding:0 24px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:10;
+}
+
+.logo{
+  font-size:14px;
+  letter-spacing:2px;
+  opacity:0.85;
 }
 
 /* HERO */
 .hero{
-  height:100vh;
+  min-height:100vh;
+  padding-top:56px;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -22,69 +46,63 @@ body{
 }
 
 .hero h1{
-  font-size:3.2rem;
-  letter-spacing:2px;
+  font-size:clamp(48px, 8vw, 72px);
+  font-weight:500;
+  letter-spacing:4px;
 }
 
 .hero p{
-  opacity:0.75;
-  margin-top:10px;
+  margin-top:12px;
+  font-size:15px;
+  opacity:0.65;
 }
 
-.scroll{
-  margin-top:40px;
-  opacity:0.6;
-  animation: bounce 1.6s infinite;
+/* CONTENT SECTIONS */
+.content{
+  max-width:720px;
+  padding:120px 24px;
+  margin:0 auto;
 }
 
-/* SECTIONS */
-.section{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+.content h2{
+  font-size:28px;
+  font-weight:500;
+  letter-spacing:2px;
+  margin-bottom:14px;
+}
+
+.content p{
+  font-size:15px;
+  opacity:0.65;
+}
+
+/* FOOTER CREDIT */
+.footer{
+  padding:80px 24px 40px;
+  text-align:right;
+  font-size:12px;
+  opacity:0.45;
+}
+
+/* FADE IN ANIMATION */
+.reveal{
   opacity:0;
-  transform:translateY(60px);
-  transition:1s ease;
+  transform:translateY(24px);
+  transition:0.8s ease;
 }
 
-.section.show{
+.reveal.show{
   opacity:1;
   transform:translateY(0);
 }
 
-/* GLASS CARD */
-.glass{
-  background:rgba(0,0,0,0.55);
-  border:1px solid rgba(255,140,0,0.35);
-  box-shadow:
-    0 0 25px rgba(255,140,0,0.25),
-    inset 0 0 20px rgba(255,140,0,0.15);
-  backdrop-filter: blur(14px);
-  border-radius:16px;
-  padding:40px;
-  max-width:600px;
-  text-align:center;
-}
-
-.glass h2{
-  font-size:2rem;
-  margin-bottom:10px;
-}
-
-.glass p{
-  opacity:0.75;
-  line-height:1.6;
-}
-
-/* ANIMATION */
-@keyframes bounce{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(8px)}
-}
-
 /* MOBILE */
 @media(max-width:600px){
-  .hero h1{font-size:2.4rem}
-  .glass{margin:20px}
+  .content{
+    padding:90px 20px;
+  }
+
+  .footer{
+    text-align:center;
+  }
 }
