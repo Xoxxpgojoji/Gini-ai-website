@@ -1,15 +1,13 @@
-const sections = document.querySelectorAll(".section");
+const elements = document.querySelectorAll(".reveal");
 
-function revealSections(){
-  sections.forEach(section => {
-    const top = section.getBoundingClientRect().top;
-    const trigger = window.innerHeight * 0.85;
-
-    if(top < trigger){
-      section.classList.add("show");
+function revealOnScroll(){
+  elements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight * 0.85){
+      el.classList.add("show");
     }
   });
 }
 
-window.addEventListener("scroll", revealSections);
-window.addEventListener("load", revealSections);
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
