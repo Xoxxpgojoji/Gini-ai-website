@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Gini AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- BASE + MODEL + ANIMATIONS CSS -->
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/model1.css" />
-  <link rel="stylesheet" href="css/animations.css" />
-
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/model1.css">
 </head>
 <body>
 
-  <!-- ================= HEADER / HERO ================= -->
-  <header class="hero">
-    <h1 class="hero-title reveal">Gini AI</h1>
-    <p class="hero-subtitle reveal">
-      A calm, trustworthy and premium artificial intelligence
-    </p>
+  <!-- STICKY HEADER (SCROLL PE AAYEGA) -->
+  <header id="mainHeader">
+    <div class="logo">Gini AI</div>
   </header>
 
-  <!-- ================= MODEL 1 SECTION ================= -->
-  <section class="model-section" id="model1">
-    <div class="model-header">
-      <h2 class="model-title">Gini Model 1</h2>
+  <!-- HERO SECTION (PAGE 1) -->
+  <section class="section hero-section">
+    <div class="hero-content reveal">
+      <h1>Gini AI</h1>
+      <p>Designing Intelligence for the Future</p>
+      <button class="hero-btn">Explore</button>
     </div>
+  </section>
 
-    <div class="slider">
+  <!-- MODEL 1 SECTION (PAGE 2) -->
+  <section class="section model-section">
+    <h2 class="model-title">Gini – Model 1</h2>
+
+    <div class="slider" data-slider="model1">
       <div class="slides">
-        <img src="assets/gini-model1/img1.png" class="slide active" />
-        <img src="assets/gini-model1/img2.png" class="slide" />
-        <img src="assets/gini-model1/img3.png" class="slide" />
-        <img src="assets/gini-model1/img4.png" class="slide" />
+        <img src="assets/gini-model1/img1.png">
+        <img src="assets/gini-model1/img2.png">
+        <img src="assets/gini-model1/img3.png">
+        <img src="assets/gini-model1/img4.png">
       </div>
     </div>
   </section>
 
-  <!-- ================= FUTURE VISION / CONTENT ================= -->
-  <section class="future-section">
-    <h2 class="reveal">Future Vision</h2>
-    <p class="reveal">
-      Designed with minimalism, intelligence and human trust at its core.
-    </p>
+  <!-- FUTURE / HERO AGAIN (PAGE 3) -->
+  <section class="section future-section reveal">
+    <h2>Future Vision</h2>
+    <p>Human–AI harmony, calm and trustworthy.</p>
   </section>
 
-  <!-- ================= SCRIPTS ================= -->
+  <!-- JS FILES -->
   <script src="js/main.js"></script>
   <script src="js/slider.js"></script>
   <script src="js/scroll.js"></script>
