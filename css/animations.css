@@ -1,16 +1,5 @@
+/* TEMPORARY: animations off */
 .reveal {
-  opacity: 1;
-  transform: none;
-}
-
-/* future animation ke liye */
-.reveal.animate {
-  opacity: 0;
-  transform: translateY(80px);
-}
-
-.reveal.animate.active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  opacity: 1 !important;
+  transform: none !important;
 }
