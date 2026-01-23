@@ -1,40 +1,24 @@
-/* RESET */
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family:Arial, sans-serif;
 }
 
-/* BODY */
 body{
   background:#0b0b0f;
-  color:#ffffff;
+  color:white;
   overflow-x:hidden;
 }
 
-/* COMMON SECTION */
-.section{
+/* HERO */
+.hero{
   height:100vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
-
-  opacity:0;
-  transform:translateY(60px);
-  transition:1s ease;
-}
-
-/* SHOW ON SCROLL */
-.section.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* HERO */
-.hero{
   background:radial-gradient(circle at top, #1a1a2e, #0b0b0f);
 }
 
@@ -43,30 +27,42 @@ body{
   letter-spacing:4px;
 }
 
-.tagline{
-  margin-top:15px;
-  font-size:1.2rem;
+.hero p{
+  margin-top:10px;
   opacity:0.8;
 }
 
-/* SCROLL INDICATOR */
-.scroll-indicator{
+.scroll{
   margin-top:40px;
-  font-size:0.9rem;
-  opacity:0.7;
-  animation:bounce 1.5s infinite;
+  animation:bounce 2s infinite;
+  opacity:0.6;
 }
 
-/* TEXT SECTIONS */
+/* SECTIONS */
+.section{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  opacity:0;
+  transform:translateY(60px);
+  transition:1s ease;
+}
+
+.section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
 .section h2{
-  font-size:2.5rem;
+  font-size:2rem;
   margin-bottom:10px;
 }
 
 .section p{
-  font-size:1.1rem;
-  opacity:0.75;
-  max-width:600px;
+  opacity:0.7;
 }
 
 /* ANIMATION */
