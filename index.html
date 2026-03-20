@@ -8,73 +8,127 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/model1.css">
+
+  <style>
+    /* CHAT BUTTON */
+    #chatBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 18px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    /* CHAT BOX */
+    #chatBox {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 300px;
+      background: #111;
+      color: #fff;
+      border-radius: 12px;
+      padding: 10px;
+      z-index: 1000;
+    }
+
+    #messages {
+      height: 200px;
+      overflow-y: auto;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    #userInput {
+      width: 70%;
+      padding: 5px;
+      border: none;
+      outline: none;
+    }
+
+    #sendBtn {
+      width: 25%;
+      padding: 5px;
+      background: #fff;
+      color: #000;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- STICKY HEADER (SCROLL PE AAYEGA) -->
+  <!-- HEADER -->
   <header id="mainHeader">
     <div class="logo">Gini AI</div>
   </header>
 
-  <!-- HERO SECTION (PAGE 1) -->
+  <!-- HERO SECTION -->
   <section class="section hero-section">
     <div class="hero-content reveal">
       <h1>Gini AI</h1>
       <p>Designing Intelligence for the Future</p>
+
+      <!-- 🔥 TALK TO GINI BUTTON -->
+      <button id="chatBtn">Talk to Gini</button>
+
       <div class="swipe-indicator">
-  <span>Swipe to explore</span>
-  <div class="swipe-line"></div>
+        <span>Swipe to explore</span>
+        <div class="swipe-line"></div>
       </div>
     </div>
   </section>
 
-  <!-- MODEL 1 SECTION (PAGE 2) -->
-  <section class="section model-section">
-    <h2 class="model-title">Gini – Model 1</h2>
+  <!-- 🔥 CHAT BOX -->
+  <div id="chatBox">
+    <div id="messages"></div>
+    <input type="text" id="userInput" placeholder="Type message...">
+    <button id="sendBtn">Send</button>
+  </div>
 
-    <div class="slider" data-slider="model1">
-      <div class="slides">
-        <img src="assets/gini-model1/img1.png">
-        <img src="assets/gini-model1/img2.png">
-        <img src="assets/gini-model1/img3.png">
-        <img src="assets/gini-model1/img4.png">
-      </div>
-    </div>
-  </section>
+  <!-- JS -->
+  <script>
+    const chatBtn = document.getElementById("chatBtn");
+    const chatBox = document.getElementById("chatBox");
+    const sendBtn = document.getElementById("sendBtn");
 
-<!-- FUTURE / EXPANDED SECTIONS -->
-<section class="section future-section reveal">
-  <h2>Future Vision</h2>
-  <p>Human–AI harmony, calm and trustworthy.</p>
-</section>
+    chatBtn.onclick = () => {
+      chatBox.style.display = "block";
+    };
 
-<section class="section future-section reveal">
-  <h2>Design Philosophy</h2>
-  <p>
-    Gini AI is built with minimalism, clarity and emotional intelligence.
-    Every interaction feels natural and premium.
-  </p>
-</section>
+    sendBtn.onclick = sendMessage;
 
-<section class="section future-section reveal">
-  <h2>Intelligence Layer</h2>
-  <p>
-    From understanding intent to adapting over time,
-    Gini evolves with the user instead of overwhelming them.
-  </p>
-</section>
+    function sendMessage() {
+      let input = document.getElementById("userInput").value;
+      let messages = document.getElementById("messages");
 
-<section class="section future-section reveal">
-  <h2>The Road Ahead</h2>
-  <p>
-    Model 2, Model 3 and beyond — each step closer to a
-    deeply human-centered artificial intelligence.
-  </p>
-</section>
-  <!-- JS FILES -->
-  <script src="js/main.js"></script>
-  <script src="js/slider.js"></script>
-  <script src="js/scroll.js"></script>
+      if (input.trim() === "") return;
+
+      // USER MESSAGE
+      messages.innerHTML += `<p><b>You:</b> ${input}</p>`;
+
+      // BASIC AI REPLY
+      let reply = "Hello, I am Gini AI";
+
+      if (input.toLowerCase().includes("hello")) {
+        reply = "Hello ANMOL 👋";
+      } else if (input.toLowerCase().includes("who are you")) {
+        reply = "I am Gini, your personal AI assistant";
+      }
+
+      messages.innerHTML += `<p><b>Gini:</b> ${reply}</p>`;
+
+      document.getElementById("userInput").value = "";
+      messages.scrollTop = messages.scrollHeight;
+    }
+  </script>
 
 </body>
 </html>
